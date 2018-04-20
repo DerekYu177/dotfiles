@@ -1,0 +1,16 @@
+# List all matches in case multiple possible completions are possible
+set show-all-if-ambiguous on
+
+# Show all autocomplete results at once
+set page-completions off
+
+# If there are more than 50 possible completions for a word, ask to show them all
+set completion-query-items 50
+
+# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# Flip through autocompletion matches with Shift-Tab.
+# "\e[Z": menu-complete
