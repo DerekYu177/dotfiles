@@ -1,0 +1,34 @@
+#!/bin/bash
+
+_get_brew() {
+    if hash brew 2>/dev/null; then
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+}
+
+_get_
+
+_get_brew()
+brew update
+brew cleanup
+
+# https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789
+brew tap caskroom/cask
+brew tap caskroom/versions
+
+# let's not fuck this one up
+brew install git
+brew link --force git
+
+# others
+brew install wget
+
+# macOS applications
+brew cask install atom
+brew cask install dropbox
+brew cask install google-chrome
+brew cask install vlc
+brew cask install bettertouchtool # you'll need to provide the key for this
+brew cask install slack
+brew cask install iterm2
+brew cask install apptivate
