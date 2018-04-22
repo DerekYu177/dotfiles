@@ -16,7 +16,7 @@ alias mcgill="cd ~/Documents/McGill\ Winter\ 2018\ \(M\)/"
 alias research="cd ~/Documents/Research"
 
 # remap programs
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vim='nvim'
 alias site='/usr/local/bin/w3m'
 
 # shortcuts
