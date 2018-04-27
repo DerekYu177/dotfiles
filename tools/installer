@@ -20,6 +20,10 @@ brew tap caskroom/versions
 brew install git
 brew link --force git
 
+# when we install ctags we have to remove the earlier link
+brew unlink ctags
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+
 # others
 brew install wget
 
@@ -32,3 +36,4 @@ brew cask install bettertouchtool # you'll need to provide the key for this
 brew cask install slack
 brew cask install iterm2
 brew cask install apptivate
+
