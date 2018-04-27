@@ -3,7 +3,7 @@ import sys
 import argparse
 
 def print_color(color, text, color_text=False):
-    modifier = '\x1b[38;5;' if color_text else '\x1b[48;5;' 
+    modifier = '\x1b[38;5;' if color_text else '\x1b[48;5;'
     print(modifier + str(color) + 'm' + str(text) + '\033[0m')
 
 def print_in_color(xterm_color, text):
@@ -33,7 +33,7 @@ def process(arg, color_text):
     [xterm2rgb(i, color_text) if _is_xterm(i) else rgb2xterm(i, color_text) for i in arg]
 
 def _is_xterm(xterm):
-    return len(xterm) <= 3 and int(xterm) <= 255 
+    return len(xterm) <= 3 and int(xterm) <= 255
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -42,4 +42,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if len(args.colors) is None: all_colors()
-    else: process(args.colors, args.text) 
+    else: process(args.colors, args.text)
