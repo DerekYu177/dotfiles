@@ -11,5 +11,5 @@ ln -sfv "$dotfiles/core/inputrc" "$HOME/.inputrc"
 ln -sfv "$dotfiles/core/bashrc" "$HOME/.bashrc"
 ln -sfv "$dotfiles/git/.gitconfig" ~
 ln -sfv "$dotfiles/git/.gitignore_global" ~
-ln -sfv "$dotfiles/.tmux.conf" ~
-ln -sfv "$dotfiles/.nvim.vim" "$HOME/.config/nvim/init.vim" 
+ln -sfv "$dotfiles/tmux.conf" "$HOME/.tmux.conf"
+ln -sfv "$dotfiles/nvim.vim" "$HOME/.config/nvim/init.vim" 
