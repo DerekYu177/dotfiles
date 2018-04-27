@@ -19,6 +19,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
+Plug 'neomake/neomake'
+
 ":GenCtags
 Plug 'jsfaint/gen_tags.vim'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
@@ -35,6 +37,7 @@ call plug#end()
 
 " Deoplete Config
 let g:deoplete#enable_at_startup = 1
+let g:neomake_open_list = 2
 
 " NerdTree Config
 " nnoremap <C-\> :NERDTreeToggle<CR>
@@ -42,6 +45,9 @@ let g:deoplete#enable_at_startup = 1
 " open NERDTree if no files are specified
 autocmd StdinReadPre * let s:st_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Neomake Config
+call neomake#configure#automake('rw', 1000)
 
 " Airline Config
 let g:airline_theme='onedark'
@@ -53,11 +59,29 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " badwhitespace
-highlight BadWhitespace ctermbg=darkred
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+autocmd BufWritePre *.py,*.rb :call <SID>StripTrailingWhitespaces()
 
 "getting PEP8 indentation for python3
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 | 
+    \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
     \ set textwidth=79 |
@@ -65,16 +89,16 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix |
     \ set encoding=utf-8
-    \ match BadWhitespace /\s\+$/
 
 au BufNewFile,BufRead *.txt
     \ set shiftwidth=2 |
     \ set expandtab |
-    \ set tabstop=2 | 
-    \ retab 
+    \ set tabstop=2 |
+    \ retab
 
 "Turning on Line Numbering
-set nu
+set number
+set relativenumber
 
 "pretty this shit
 let g:python_highlight_all=1
