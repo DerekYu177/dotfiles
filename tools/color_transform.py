@@ -39,7 +39,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('colors', nargs=argparse.REMAINDER, help='the color(s) to be transformed')
     parser.add_argument('-t', '--text', action='store_true', help='specify if the text is colored')
+    parser.add_argument('-a', '--all', help='print all colors')
     args = parser.parse_args()
 
-    if len(args.colors) is None: all_colors()
+    if args.all: all_colors()
     else: process(args.colors, args.text)
