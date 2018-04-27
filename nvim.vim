@@ -29,10 +29,11 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Compatibility
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'edkolev/tmuxline.vim'
 
 " Themes
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
+" Plug 'nightsense/seagrey'
 call plug#end()
 
 " Deoplete Config
@@ -50,7 +51,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 call neomake#configure#automake('rw', 1000)
 
 " Airline Config
-let g:airline_theme='onedark'
+let g:airline_theme='gruvbox'
 
 " Shortcut keys
 nnoremap <C-J> <C-W><C-J>
@@ -105,7 +106,9 @@ let g:python_highlight_all=1
 let g:enable_bold_font=1
 set termguicolors
 syntax on
-colorscheme onedark
+set background=dark
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 
 set scrolloff=10
 set laststatus=2 " Always display the statusline in all windows
