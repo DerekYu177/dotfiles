@@ -6,13 +6,16 @@ dotfiles="$HOME/.dotfiles"
 PATH="$dotfiles/bin:$PATH"
 
 # Bunch of symlinks
+
+# Shell (Perform installation in Bash, then switch to zsh)
 ln -sfv "$dotfiles/core/bash_profile" "$HOME/.bash_profile"
 ln -sfv "$dotfiles/core/inputrc" "$HOME/.inputrc"
 ln -sfv "$dotfiles/core/bashrc" "$HOME/.bashrc"
 ln -sfv "$dotfiles/git/.gitconfig" ~
 ln -sfv "$dotfiles/git/.gitignore_global" ~
 ln -sfv "$dotfiles/tmux.conf" "$HOME/.tmux.conf"
-ln -sfv "$dotfiles/nvim.vim" "$HOME/.config/nvim/init.vim" 
+ln -sfv "$dotfiles/nvim.vim" "$HOME/.config/nvim/init.vim"
+ln -sfv "$dotfiles/zshrc" "$HOME/.zshrc"
 
 # iterm2 preferences
 # we use Gruvbox styes for vim @ morhetz/gruvbox
