@@ -9,7 +9,7 @@
 build_planck() {
   cd $WORKSPACE/olkb/qmk_firmware
   make planck-rev4-derek-all
-  echo "build complete. reset the planck and run #flash_planck" 
+  echo "build complete. reset the planck and run #flash_planck"
 }
 
 flash_planck() {

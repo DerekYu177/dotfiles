@@ -1,4 +1,5 @@
 alias bash='/usr/local/bin/bash'
+alias zsh='/usr/local/bin/zsh'
 
 # list declared aliases, functions, paths just in case
 alias aliases="alias | sed 's/=.*//'"
