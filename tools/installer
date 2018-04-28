@@ -6,8 +6,6 @@ _get_brew() {
     fi
 }
 
-_get_
-
 _get_brew()
 brew update
 brew cleanup
@@ -24,16 +22,23 @@ brew link --force git
 brew unlink ctags
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
+# we will install zsh but won't switch to it here
+brew install zsh
+if ! grep -q /usr/local/bin/zsh /private/etc/shells; then
+	echo /usr/local/bin/zsh | sudo tee -a /private/etc/shells
+else
+	echo 'zsh already found in /private/etc/shells'
+fi
+
 # others
 brew install wget
 
 # macOS applications
+brew cask install iterm2
 brew cask install atom
 brew cask install dropbox
 brew cask install google-chrome
 brew cask install vlc
 brew cask install bettertouchtool # you'll need to provide the key for this
 brew cask install slack
-brew cask install iterm2
 brew cask install apptivate
-
