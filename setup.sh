@@ -19,8 +19,11 @@ ln -sfv "$DOTFILES/git/.gitignore_global" ~
 
 # tooling
 ln -sfv "$DOTFILES/tmux.conf" "$HOME/.tmux.conf"
-ln -sfv "$DOTFILES/nvim.vim" "$HOME/.config/nvim/init.vim"
 ln -sfv "$DOTFILES/zsh/zshrc" "$HOME/.zshrc"
+
+# requires special folder creation
+mkdir -p $HOME/.config/nvim/
+ln -sfv "$DOTFILES/nvim.vim" "$HOME/.config/nvim/init.vim"
 
 # iterm2 preferences
 # we use Gruvbox styes for vim @ morhetz/gruvbox
