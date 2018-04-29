@@ -102,6 +102,11 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# load custom stuff
+for file in $HOME/.dotfiles/shell/*(.); do
+	source $file	
+done
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 

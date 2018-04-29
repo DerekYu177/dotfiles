@@ -42,3 +42,9 @@ brew cask install vlc
 brew cask install bettertouchtool # you'll need to provide the key for this
 brew cask install slack
 brew cask install apptivate
+
+# setups
+# copy over the fonts
+cp -r $HOME/.dotfiles/themes/FiraCode $HOME/Library/Fonts
+
+

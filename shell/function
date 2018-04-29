@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+WORKSPACE=$HOME/Documents/workspace
+
 # run synergy
 # cd /Applications/Synergy.app/Contents/Resources
 # ./synergy-core --server

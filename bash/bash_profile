@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in $DOTFILES/shell/{path,alias,function}; do
+	[ -r $file ] && [ -f $file ] && source $file
+done;
+unset file;
+
+# we then want to run bash_prompt, installed in the local folder
+source $DOTFILES/bash/bash_prompt
+
+
