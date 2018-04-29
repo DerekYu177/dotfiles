@@ -45,6 +45,6 @@ brew cask install apptivate
 
 # setups
 # copy over the fonts
-cp -r $HOME/.dotfiles/themes/FiraCode $HOME/Library/Fonts
+cp -r $HOME/dotfiles/themes/FiraCode $HOME/Library/Fonts
 
 

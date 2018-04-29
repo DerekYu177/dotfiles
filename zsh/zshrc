@@ -104,7 +104,7 @@ fi
 
 # load custom stuff
 for file in $HOME/.dotfiles/shell/*(.); do
-	source $file	
+	source $file
 done
 
 # ssh
