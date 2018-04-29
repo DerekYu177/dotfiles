@@ -91,12 +91,6 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
     \ set encoding=utf-8
 
-au BufNewFile,BufRead *.txt
-    \ set shiftwidth=2 |
-    \ set expandtab |
-    \ set tabstop=2 |
-    \ retab
-
 "Turning on Line Numbering
 set number
 set relativenumber
