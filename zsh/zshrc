@@ -103,7 +103,7 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 # load custom stuff
-for file in $HOME/dotfiles/shell/*(.); do
+for file in $DOTFILES/shell/*(.); do
 	source $file
 done
 

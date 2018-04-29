@@ -6,9 +6,9 @@
 # if it has, ignore prompt, else source ~/.dotfiles/shell/bash_prompt
 if hash zsh 2>/dev/null; then
 	sudo chsh /usr/local/bin/zsh
-	source ~/dotfiles/zsh/zshrc
+	source $HOME/dotfiles/zsh/zshrc
 else
-	source ~/dotfiles/bash/bash_prompt
+	source $HOME/dotfiles/bash/bash_profile
 fi
 
 
