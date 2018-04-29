@@ -1,2 +1,2 @@
 #!/bin/bash
-[ -n "$PS1" ] && source ~/dotfiles/core/bash_profile
+[ -n "$PS1" ] && source ~/dotfiles/bash/bash_profile
