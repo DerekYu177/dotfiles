@@ -14,10 +14,6 @@ brew cleanup
 brew tap caskroom/cask
 brew tap caskroom/versions
 
-# let's not fuck this one up
-brew install git
-brew link --force git
-
 # when we install ctags we have to remove the earlier link
 brew unlink ctags
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
