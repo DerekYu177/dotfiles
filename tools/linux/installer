@@ -1,0 +1,33 @@
+#!/bin/bash
+
+sudo apt-get install zsh
+sudo apt-get install neovim
+
+# to install GNU global
+sudo apt-get update
+sudo apt-get -y install curl
+sudo apt-get -y install wget
+sudo apt-get -y install ncurses-dev
+sudo apt-get -y install exuberant-ctags
+
+sudo apt-get -y install python
+
+CURRENT=`pwd`
+wget http://tamacom.com/global/global-6.4.tar.gz
+tar zxvf global-6.4.tar.gz
+cd global-6.4
+./configure
+make
+sudo make install
+
+# GNU global cleanup
+cd $CURRENT
+rm -rf global-6.4
+rm global-6.4.tar.gz
+
+# modify the gnome color theme with Mayccoll/Gogh
+# uses gruvbox dark
+sudo apt-get install dconf-cli
+wget -O xt https://git.io/v7eBS && chmod +x xt && ./xt && rm xt
+
+
