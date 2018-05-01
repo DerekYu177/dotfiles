@@ -109,6 +109,19 @@ for file in $DOTFILES/shell/*(.); do
 	source $file
 done
 
+# observe https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux
+case "$(uname -s)" in
+	Darwin)
+		for file in $DOTFILES/tools/mac/*(.); do source $file; done;;
+	Linux)
+		echo 'Linux';;
+	CYGWIN*|MINGW32*|MSYS*)
+		echo 'MS Windows';;
+
+	*)
+		echo 'other OS';;
+esac
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
