@@ -1,31 +1,19 @@
-alias bash='/usr/local/bin/bash'
-alias zsh='/usr/local/bin/zsh'
-
 # list declared aliases, functions, paths just in case
 alias aliases="alias | sed 's/=.*//'"
 alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
 alias paths='echo -e ${PATH//:/\\n}'
 
-# ssh
-alias rssl="ssh illuin@132.206.77.119"
-alias ecse682="ssh derek@cerberus.ece.mcgill.ca"
-alias ormal="ssh ormal@132.206.77.122"
-
-# cd shortcuts
-alias work="cd ~/Documents/workspace"
-alias mcgill="cd ~/Documents/McGill\ Winter\ 2018\ \(M\)/"
-alias research="cd ~/Documents/Research"
-
 # remap programs
 alias vim='nvim'
 alias site='/usr/local/bin/w3m'
 alias ctags'/usr/local/bin/ctags'
-
+alias bash='/usr/local/bin/bash'
+alias zsh='/usr/local/bin/zsh'
+#
 # shortcuts
 alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
 alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
 
-alias reload="source ~/.bash_profile"
 alias _="sudo"
 alias g="git"
 
@@ -55,5 +43,3 @@ alias ip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
-
-

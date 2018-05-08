@@ -109,28 +109,24 @@ for file in $DOTFILES/shell/*(.); do
 	source $file
 done
 
-# observe https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux
-case "$(uname -s)" in
-	Darwin)
-		for file in $DOTFILES/tools/mac/*(.); do source $file; done;;
-	Linux)
-		echo 'Linux';;
-	CYGWIN*|MINGW32*|MSYS*)
-		echo 'MS Windows';;
+# if our main machine
+# we should make sure we set this at some point
+if [ -n $MAIN_MACHINE -a $MAIN_MACHINE == 'TRUE']; then
+	for file in $DOTFILES/tools/mac/*(.); do source $file; done;
+fi
 
-	*)
-		echo 'other OS';;
-esac
+# observe https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux
+# case "$(uname -s)" in
+# 	Darwin)
+# 		echo 'macOS';;
+# 	Linux)
+# 		echo 'Linux';;
+# 	CYGWIN*|MINGW32*|MSYS*)
+# 		echo 'MS Windows';;
+#
+# 	*)
+# 		echo 'other OS';;
+# esac
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig ="mate ~/.zshrc"
-# alias ohmyzsh=" mate ~/.oh-my-zsh"
-alias vim='nvim'

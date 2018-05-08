@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# deselect as necessary
+export $MAIN_MACHINE="TRUE"
+
 # Make utilities available
 # dotfiles
 export DOTFILES="$HOME/dotfiles"
