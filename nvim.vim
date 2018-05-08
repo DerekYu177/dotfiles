@@ -30,6 +30,11 @@ Plug 'vim-airline/vim-airline-themes'
 " Compatibility
 Plug 'christoomey/vim-tmux-navigator'
 
+" Ruby Specific
+Plug 'tpope/vim-endwise'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-rails'
+
 " Themes
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
