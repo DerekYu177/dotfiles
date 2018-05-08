@@ -111,7 +111,7 @@ done
 
 # if our main machine
 # uncomment as necessary
-for file in $DOTFILES/tools/mac/*(.); do source $file; done;
+# for file in $DOTFILES/tools/mac/*(.); do source $file; done;
 
 # observe https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux
 # case "$(uname -s)" in
@@ -128,3 +128,6 @@ for file in $DOTFILES/tools/mac/*(.); do source $file; done;
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# shop
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
