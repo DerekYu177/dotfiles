@@ -25,10 +25,18 @@ ln -sfv "$DOTFILES/zsh/zshrc" "$HOME/.zshrc"
 mkdir -p $HOME/.config/nvim/
 ln -sfv "$DOTFILES/nvim.vim" "$HOME/.config/nvim/init.vim"
 
+# apply gitignore global
+git config --global core.excludesfile '~/.gitignore_global'
+
 # iterm2 preferences
 # we use Gruvbox styes for vim @ morhetz/gruvbox
 # for iterm itself there is also a gruvbox theme @ morhetz/gruvbox-contrib
 # lastly, the text is firacode @ tonsky/FiraCode
+ln -sfv "$DOTFILES/themes/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/com.googlecode.iterm2.plist"
+cp -r "$DOTFILES/themes/FiraCode" "$HOME/Library/Fonts"
+
+# BetterTouchTool preferences
+ln -sfv "$DOTFILES/themes/com.hegenberg.BetterTouchTool.plist" "$HOME/Library/Preferences/com.hegenberg.BetterTouchTool.plist"
 
 # once the symlinks have been installed
 # then the next thing that gets run is ~/.profile
