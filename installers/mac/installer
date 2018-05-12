@@ -45,3 +45,13 @@ brew cask install bettertouchtool # you'll need to provide the key for this
 brew cask install slack
 brew cask install apptivate
 
+# iterm2 preferences
+# we use Gruvbox styes for vim @ morhetz/gruvbox
+# for iterm itself there is also a gruvbox theme @ morhetz/gruvbox-contrib
+# lastly, the text is firacode @ tonsky/FiraCode
+ln -sfv "$DOTFILES/themes/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/com.googlecode.iterm2.plist"
+cp -r "$DOTFILES/themes/FiraCode" "$HOME/Library/Fonts"
+
+# BetterTouchTool preferences
+ln -sfv "$DOTFILES/themes/com.hegenberg.BetterTouchTool.plist" "$HOME/Library/Preferences/com.hegenberg.BetterTouchTool.plist"
+

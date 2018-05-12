@@ -25,6 +25,9 @@ cd $CURRENT
 rm -rf global-6.4
 rm global-6.4.tar.gz
 
+sudo apt-get -y install tmux
+sudo apt-get -y install python3
+
 # modify the gnome color theme with Mayccoll/Gogh
 # uses gruvbox dark
 sudo apt-get install dconf-cli

@@ -20,6 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'neomake/neomake'
+Plug 'AndrewRadev/splitjoin.vim'
 
 ":GenCtags
 Plug 'jsfaint/gen_tags.vim'

@@ -28,20 +28,8 @@ ln -sfv "$DOTFILES/nvim.vim" "$HOME/.config/nvim/init.vim"
 # apply gitignore global
 git config --global core.excludesfile '~/.gitignore_global'
 
-# iterm2 preferences
-# we use Gruvbox styes for vim @ morhetz/gruvbox
-# for iterm itself there is also a gruvbox theme @ morhetz/gruvbox-contrib
-# lastly, the text is firacode @ tonsky/FiraCode
-ln -sfv "$DOTFILES/themes/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/com.googlecode.iterm2.plist"
-cp -r "$DOTFILES/themes/FiraCode" "$HOME/Library/Fonts"
-
-# BetterTouchTool preferences
-ln -sfv "$DOTFILES/themes/com.hegenberg.BetterTouchTool.plist" "$HOME/Library/Preferences/com.hegenberg.BetterTouchTool.plist"
-
 # once the symlinks have been installed
 # then the next thing that gets run is ~/.profile
 # profile should decide whether the bash/ file will be called
 # or whether a shell change should be warrented
 # the both shells will call the shell/ folder
-# once that is done, the user can decide whether to call the UNTESTED mac_installer
-# or do a custom install
