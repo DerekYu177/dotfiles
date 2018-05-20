@@ -33,4 +33,5 @@ sudo apt-get -y install python3
 sudo apt-get install dconf-cli
 wget -O xt https://git.io/v7eBS && chmod +x xt && ./xt && rm xt
 
-
+# install tpm for tmux and install associated packages
+tmux source ~/.tmux.conf

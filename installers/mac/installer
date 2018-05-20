@@ -55,3 +55,5 @@ cp -r "$DOTFILES/themes/FiraCode" "$HOME/Library/Fonts"
 # BetterTouchTool preferences
 ln -sfv "$DOTFILES/themes/com.hegenberg.BetterTouchTool.plist" "$HOME/Library/Preferences/com.hegenberg.BetterTouchTool.plist"
 
+# install tpm for tmux and install associated packages
+tmux source ~/.tmux.conf

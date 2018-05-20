@@ -8,11 +8,11 @@ PATH="$DOTFILES/bin:$PATH"
 # Bunch of symlinks
 
 # Shell (Perform installation in Bash, then switch to zsh)
-ln -sfv "$DOTFILES/profile" "$HOME/.profile"
+#ln -sfv "$DOTFILES/profile" "$HOME/.profile"
 
-ln -sfv "$DOTFILES/bash/bash_profile" "$HOME/.bash_profile"
-ln -sfv "$DOTFILES/bash/inputrc" "$HOME/.inputrc"
-ln -sfv "$DOTFILES/bash/bashrc" "$HOME/.bashrc"
+#ln -sfv "$DOTFILES/bash/bash_profile" "$HOME/.bash_profile"
+#ln -sfv "$DOTFILES/bash/inputrc" "$HOME/.inputrc"
+#ln -sfv "$DOTFILES/bash/bashrc" "$HOME/.bashrc"
 
 ln -sfv "$DOTFILES/git/.gitconfig" ~
 ln -sfv "$DOTFILES/git/.gitignore_global" ~
