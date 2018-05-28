@@ -21,6 +21,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'neomake/neomake'
 
+" Window Swapping
+Plug 'wesQ3/vim-windowswap'
+
 ":GenCtags
 Plug 'jsfaint/gen_tags.vim'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
@@ -34,6 +37,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
 
 " Themes
 Plug 'joshdick/onedark.vim'
@@ -53,7 +57,7 @@ autocmd StdinReadPre * let s:st_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Neomake Config
-call neomake#configure#automake('rw', 1000)
+call neomake#configure#automake('nw', 1000)
 
 " Airline Config
 let g:airline_theme='gruvbox'
@@ -83,7 +87,7 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-autocmd BufWritePre *.py,*.rb :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.py,*.rb,*.erb :call <SID>StripTrailingWhitespaces()
 
 "getting PEP8 indentation for python3
 au BufNewFile,BufRead *.py
@@ -95,6 +99,16 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix |
     \ set encoding=utf-8
+
+au BufNewFile,BufRead *.rb,*.erb
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set autoindent |
+    \ set expandtab
+
+" Text / Code Folding
+set foldmethod=indent
 
 "Turning on Line Numbering
 set number
