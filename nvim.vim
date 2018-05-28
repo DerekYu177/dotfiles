@@ -97,6 +97,9 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
     \ set encoding=utf-8
 
+" Turn on folding
+set foldmethod=indent
+
 "Turning on Line Numbering
 set number
 set relativenumber
