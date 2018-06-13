@@ -1981,13 +1981,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>268 137 606 469 0 0 3440 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>494 142 796 473 0 0 1440 900 </string>
+	<string>494 163 918 452 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 193 592 584 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2160 1530 810 504 0 0 3440 1417 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 1280 777 0 0 1280 777 </string>
+	<string>0 9 1440 868 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>197 45 650 401 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -2825,6 +2825,8 @@
 					<string>\btelnet:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
 				</dict>
 			</array>
+			<key>Space</key>
+			<integer>0</integer>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -2856,7 +2858,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>12</integer>
+			<integer>1</integer>
 			<key>Working Directory</key>
 			<string>/Users/derekyu/</string>
 		</dict>
@@ -3798,7 +3800,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-05T23:28:56Z</date>
+	<date>2018-05-31T02:57:28Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
