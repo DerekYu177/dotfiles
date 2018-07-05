@@ -2,12 +2,6 @@
 " disable background color scheme
 set t_ut=
 
-" recursive search through directory
-set path+=**
-
-" display all files when tab complete
-set wildmenu
-
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -16,35 +10,46 @@ endif
 
 call plug#begin()
 Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 'neomake/neomake'
 Plug 'AndrewRadev/splitjoin.vim'
-
-":GenCtags
 Plug 'jsfaint/gen_tags.vim'
-Plug 'donRaphaco/neotex', { 'for': 'tex' }
+Plug 'christoomey/vim-tmux-navigator'
+
+" Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Compatibility
-Plug 'christoomey/vim-tmux-navigator'
+" Linter and autocompletes
+Plug 'w0rp/ale'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
-" Ruby Specific
+" Ruby
 Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rails'
 
 " Themes
-Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
-" Plug 'nightsense/seagrey'
 call plug#end()
 
-" Deoplete Config
+" Async Linter Engine Config (ale)
+" Enable autocompletion when available
+let g:ale_completion_enabled=1
+" Only run a single linter
+let b:ale_linters = {'python': ['autopep8']}
+
+" Deoplete Async Config
 let g:deoplete#enable_at_startup = 1
-let g:neomake_open_list = 2
 
 " NerdTree Config
 " nnoremap <C-\> :NERDTreeToggle<CR>
@@ -53,11 +58,11 @@ let g:neomake_open_list = 2
 autocmd StdinReadPre * let s:st_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" Neomake Config
-call neomake#configure#automake('rw', 1000)
-
-" Airline Config
-let g:airline_theme='gruvbox'
+" ctrlp Config
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" Ignore things that .gitignore does
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Shortcut keys
 nnoremap <C-J> <C-W><C-J>
@@ -97,23 +102,36 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
     \ set encoding=utf-8
 
+au BufNewFile,BufRead *.rb
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab |
+    \ set autoindent
+
 " Turn on folding
 set foldmethod=indent
 
 "Turning on Line Numbering
-set number
+set nu
 set relativenumber
 
+" Gruvbox Config
+let g:gruvbox_contrast_dark='hard'
+set background=dark
+
+" Airline Config
+let g:airline_theme='gruvbox'
+" airline combination with ale
+let g:airline#extensions#ale#enabled=1
+
 "pretty this shit
-let g:python_highlight_all=1
-let g:enable_bold_font=1
+" let g:python_highlight_all=1
+" let g:enable_bold_font=1
 set termguicolors
 syntax on
-set background=dark
-let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
-set scrolloff=10
+" set scrolloff=10
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline, even if there is only one tab
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
