@@ -5,58 +5,63 @@ set t_ut=
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source ~/.config/nvim/init.vim
+  kutocmd VimEnter * PlugInstall | source ~/.config/nvim/init.vim
 endif
 
 call plug#begin()
+" UI
+Plug 'yggdroot/indentline'
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
-
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'jsfaint/gen_tags.vim'
-Plug 'christoomey/vim-tmux-navigator'
-
-" Airline
+Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+Plug 'airblade/vim-gitgutter'
 
-" Linter and autocompletes
+" Tools
+Plug 'kien/ctrlp.vim'
+Plug 'eugen0329/vim-esearch'
+Plug 'tpope/vim-surround'
+Plug 'itmammoth/doorboy.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'radenling/vim-dispatch-neovim'
+Plug 'jsfaint/gen_tags.vim'
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'sjl/vitality.vim'
 Plug 'w0rp/ale'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'mhinz/vim-startify'
 
 " Ruby
+Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rails'
 
-" Themes
-Plug 'morhetz/gruvbox'
+" HTML
+Plug 'valloric/matchtagalways'
+
 call plug#end()
 
-" Async Linter Engine Config (ale)
-" Enable autocompletion when available
-let g:ale_completion_enabled=1
-" Only run a single linter
-let b:ale_linters = {'python': ['autopep8']}
+let g:easytags_suppress_ctags_warning = 1
 
-" Deoplete Async Config
-let g:deoplete#enable_at_startup = 1
+" Async Linter Engine Config (ale)
+let g:ale_completion_enabled=1
+let g:ale_linters = { 'python': ['autopep8'], 'ruby': ['ruby', 'rubocop']}
+let g:ale_linters_explicit=1
+let g:ale_sign_column_always=1
 
 " NerdTree Config
 " nnoremap <C-\> :NERDTreeToggle<CR>
 " nnoremap <C-\|> :NERDTreeClose<CR>
 " open NERDTree if no files are specified
-autocmd StdinReadPre * let s:st_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:st_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " ctrlp Config
 let g:ctrlp_map = '<c-p>'
@@ -122,7 +127,6 @@ set background=dark
 
 " Airline Config
 let g:airline_theme='gruvbox'
-" airline combination with ale
 let g:airline#extensions#ale#enabled=1
 
 "pretty this shit
