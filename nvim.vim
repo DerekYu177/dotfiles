@@ -62,11 +62,11 @@ let g:ale_sign_column_always=1
 " open NERDTree if no files are specified
 " autocmd StdinReadPre * let s:st_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nmap ,n :NERDTreeFind<CR>
 
 " ctrlp Config
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-" Ignore things that .gitignore does
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Shortcut keys
@@ -94,7 +94,7 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-autocmd BufWritePre *.py,*.rb :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 "getting PEP8 indentation for python3
 au BufNewFile,BufRead *.py
@@ -107,7 +107,7 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
     \ set encoding=utf-8
 
-au BufNewFile,BufRead *.rb
+au BufNewFile,BufRead *.rb, *.erb
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |

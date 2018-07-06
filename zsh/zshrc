@@ -128,3 +128,6 @@ for file in $DOTFILES/tools/mac/*(.); do source $file; done;
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# shopify support
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
