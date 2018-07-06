@@ -56,12 +56,20 @@ let g:ale_linters = { 'python': ['autopep8'], 'ruby': ['ruby', 'rubocop']}
 let g:ale_linters_explicit=1
 let g:ale_sign_column_always=1
 
+" Startify working with Nerdtree
+autocmd VimEnter *
+     \   if !argc()
+     \ |   Startify
+     \ |   NERDTree
+     \ |   wincmd w
+     \ | endif
+
 " NerdTree Config
 " nnoremap <C-\> :NERDTreeToggle<CR>
 " nnoremap <C-\|> :NERDTreeClose<CR>
 " open NERDTree if no files are specified
-" autocmd StdinReadPre * let s:st_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd StdinReadPre * let s:st_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 nmap ,n :NERDTreeFind<CR>
 
 " ctrlp Config
