@@ -3,6 +3,9 @@ alias aliases="alias | sed 's/=.*//'"
 alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
 alias paths='echo -e ${PATH//:/\\n}'
 
+alias checkprice='python3 ~/Documents/workspace/PriceOptimization/main.py'
+alias checkmanga='python3 ~/Documents/workspace/mangachecker/main.py'
+
 # remap programs
 alias vim='nvim'
 alias site='/usr/local/bin/w3m'
