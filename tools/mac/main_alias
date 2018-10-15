@@ -5,5 +5,5 @@ alias ormal="ssh ormal@132.206.77.122"
 
 # cd shortcuts
 alias work="cd ~/Documents/workspace"
-alias mcgill="cd ~/Documents/McGill\ Winter\ 2018\ \(M\)/"
+alias mcgill="cd ~/Documents/McGill\ Fall\ 2018\ \(M\)/"
 alias research="cd ~/Documents/Research"
