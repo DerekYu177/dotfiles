@@ -5,6 +5,13 @@ sudo apt-get install zsh
 # make sure to install Oh-My-Zsh!
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
+# we need python for basically everything these days
+sudo apt-get install software-properties-common
+sudo apt-get install python-dev python-pip python3-dev python3-pip
+
+# successfully install neovim
+sudo apt-add-repository ppa:neovim-ppa/stable
+sudo apt-get update
 sudo apt-get install neovim
 
 # to install GNU global
@@ -13,8 +20,6 @@ sudo apt-get -y install curl
 sudo apt-get -y install wget
 sudo apt-get -y install ncurses-dev
 sudo apt-get -y install exuberant-ctags
-
-sudo apt-get -y install python
 
 CURRENT=`pwd`
 wget http://tamacom.com/global/global-6.4.tar.gz
@@ -30,7 +35,6 @@ rm -rf global-6.4
 rm global-6.4.tar.gz
 
 sudo apt-get -y install tmux
-sudo apt-get -y install python3
 
 # modify the gnome color theme with Mayccoll/Gogh
 # uses gruvbox dark
