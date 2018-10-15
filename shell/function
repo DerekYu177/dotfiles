@@ -20,7 +20,7 @@ flash_planck() {
 
   # in some certain cases, you may need to clear eeprom if the chicken
   # is well and truly cooked. For that you use
-  # dfu-programmer atmega32u4 flash --eeprom $workspace/olkb/qmk_firmware/quantum/tools/eeprom_reset.hex
+  dfu-programmer atmega32u4 flash --force --eeprom $WORKSPACE/olkb/qmk_firmware/quantum/tools/eeprom_reset.hex
   # then reset and reflash. That should do the trick
 
   dfu-programmer atmega32u4 flash planck_rev4_derek.hex
