@@ -46,9 +46,14 @@ Plug 'tpope/vim-rails'
 " HTML
 Plug 'valloric/matchtagalways'
 
+" Latex
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'vim-latex/vim-latex', { 'for': 'tex' }
+
 call plug#end()
 
 let g:easytags_suppress_ctags_warning = 1
+let g:livepreview_previewer = 'open -a Preview'
 
 " Async Linter Engine Config (ale)
 let g:ale_completion_enabled=1
@@ -119,6 +124,13 @@ au BufNewFile,BufRead *.rb, *.erb
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
+    \ set expandtab |
+    \ set autoindent
+
+au BufNewFile,BufRead *.cpp, *.h
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
     \ set expandtab |
     \ set autoindent
 
