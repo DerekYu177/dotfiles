@@ -1,5 +1,6 @@
 # fuck the swap
 alias clearswap="rm -rf ~/.local/share/nvim/swap"
+alias fixcopy="pbcopy < /dev/null"
 
 # list declared aliases, functions, paths just in case
 alias aliases="alias | sed 's/=.*//'"
