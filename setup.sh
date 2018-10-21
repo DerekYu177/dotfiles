@@ -16,9 +16,9 @@ ln -sfv "$DOTFILES/zsh/zshrc" "$HOME/.zshrc"
 
 # requires special folder creation
 mkdir -p $HOME/.config/nvim/
-ln -sfv "$DOTFILES/config/nvim.vim" "$HOME/.config/nvim/init.vim"
+ln -sfv "$DOTFILES/nvim.vim" "$HOME/.config/nvim/init.vim"
 mkdir -p $HOME/.config/alacritty
-ln -sfv "$DOTFILES/config/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
+ln -sfv "$DOTFILES/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 
 # apply gitignore global
 git config --global core.excludesfile '~/.gitignore_global'

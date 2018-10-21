@@ -1,2 +1,0 @@
-#!/bin/bash
-[ -n "$PS1" ] && source $DOTFILES/bash/bash_profile
