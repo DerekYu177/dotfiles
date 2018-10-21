@@ -14,3 +14,5 @@ unset file;
 source $DOTFILES/bash/bash_prompt
 
 
+
+export PATH="$HOME/.cargo/bin:$PATH"

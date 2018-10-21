@@ -10,5 +10,3 @@ if hash zsh 2>/dev/null; then
 else
 	source $HOME/dotfiles/bash/bash_profile
 fi
-
-

@@ -21,6 +21,8 @@ alias zsh='/usr/local/bin/zsh'
 alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
 alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
 
+alias work="~/Documents/workspace"
+
 alias _="sudo"
 alias g="git"
 

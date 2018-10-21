@@ -36,6 +36,12 @@ rm global-6.4.tar.gz
 
 sudo apt-get -y install tmux
 
+# alacrity
+curl https://sh.rustup.rs -sSf | sh
+rustup override set stable
+rustup update stable
+cargo install --git https://github.com/jwilm/alacritty
+
 # modify the gnome color theme with Mayccoll/Gogh
 # uses gruvbox dark
 sudo apt-get install dconf-cli

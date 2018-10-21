@@ -31,12 +31,19 @@ fi
 brew install wget
 brew install tmux
 
+# short stop to install rust
+curl https://sh.rustup.rs -sSf | sh
+# confirm the correct rust compiler installed
+rustup override set stable
+rustup update stable
+# make the app
+cargo install --git https://github.com/jwilm/alacritty
+
 # oh my zsh
 # if we don't install this then we will run into problems when switching
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 # macOS applications
-brew cask install iterm2
 brew cask install atom
 brew cask install dropbox
 brew cask install google-chrome

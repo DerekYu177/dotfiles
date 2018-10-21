@@ -7,13 +7,6 @@ PATH="$DOTFILES/bin:$PATH"
 
 # Bunch of symlinks
 
-# Shell (Perform installation in Bash, then switch to zsh)
-#ln -sfv "$DOTFILES/profile" "$HOME/.profile"
-
-#ln -sfv "$DOTFILES/bash/bash_profile" "$HOME/.bash_profile"
-#ln -sfv "$DOTFILES/bash/inputrc" "$HOME/.inputrc"
-#ln -sfv "$DOTFILES/bash/bashrc" "$HOME/.bashrc"
-
 ln -sfv "$DOTFILES/git/.gitconfig" ~
 ln -sfv "$DOTFILES/git/.gitignore_global" ~
 
@@ -23,7 +16,9 @@ ln -sfv "$DOTFILES/zsh/zshrc" "$HOME/.zshrc"
 
 # requires special folder creation
 mkdir -p $HOME/.config/nvim/
-ln -sfv "$DOTFILES/nvim.vim" "$HOME/.config/nvim/init.vim"
+ln -sfv "$DOTFILES/config/nvim.vim" "$HOME/.config/nvim/init.vim"
+mkdir -p $HOME/.config/alacritty
+ln -sfv "$DOTFILES/config/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 
 # apply gitignore global
 git config --global core.excludesfile '~/.gitignore_global'

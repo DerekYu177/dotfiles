@@ -2672,17 +2672,17 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>516 403 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
-	<string>205 371 735 382 0 0 1440 877 </string>
+	<string>1425 770 735 382 1080 247 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 381 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>268 137 606 469 0 0 3440 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>447 403 1018 447 0 0 1440 900 </string>
+	<string>447 442 1018 447 0 0 1440 900 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 193 592 584 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 810 526 0 0 1280 800 </string>
+	<string>0 707 1144 710 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 9 1440 868 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -4603,6 +4603,8 @@
 	<integer>8</integer>
 	<key>RightOption</key>
 	<integer>3</integer>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -4612,7 +4614,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-04T02:34:44Z</date>
+	<date>2018-10-20T08:50:38Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -4620,7 +4622,7 @@
 	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>ShowMetalFPSmeter</key>
-	<true/>
+	<false/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SmartPlacement</key>
@@ -4638,6 +4640,8 @@
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>ThreeFingerEmulates</key>
+	<false/>
+	<key>ThrottleMetalConcurrentFrames</key>
 	<false/>
 	<key>TmuxDashboardLimit</key>
 	<integer>10</integer>
@@ -4666,7 +4670,7 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.2.0</string>
+	<string>3.2.3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
