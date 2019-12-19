@@ -1,11 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 WORKSPACE=$HOME/Documents/workspace
-
-# run synergy
-# cd /Applications/Synergy.app/Contents/Resources
-# ./synergy-core --server
-# if no config path is set, it will look at ~/.synergy.conf
 
 # Build and flash the Planck with what ever is in the folder
 build_planck() {

@@ -1,7 +1,0 @@
-[user]
-	name = DerekYu
-	email = derek-nis@hotmail.com
-[push]
-	default = simple
-[core]
-	excludesfile = ~/.gitignore_global

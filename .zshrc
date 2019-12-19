@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -67,17 +69,9 @@ plugins=(
   colored-man-pages
   zsh-syntax-highlighting
   zsh-autosuggestions
-  battery
-  safe-paste
-  command-time
 
-  # iterm2
-  iterm-tab-colors
   # alacritty
   alacritty
-
-  #python
-  virtualenv
 
   #ruby
   gem
@@ -89,7 +83,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# Jump configuration
+# eval "$(jump shell zsh)"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -111,25 +106,5 @@ for file in $DOTFILES/shell/*(.); do
 	source $file
 done
 
-# if our main machine
-# uncomment as necessary
-for file in $DOTFILES/tools/mac/*(.); do source $file; done;
-
-# observe https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux
-# case "$(uname -s)" in
-# 	Darwin)
-# 		echo 'macOS';;
-# 	Linux)
-# 		echo 'Linux';;
-# 	CYGWIN*|MINGW32*|MSYS*)
-# 		echo 'MS Windows';;
-#
-# 	*)
-# 		echo 'other OS';;
-# esac
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # shopify support
-[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+# [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh

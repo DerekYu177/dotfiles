@@ -29,7 +29,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
-Plug 'jsfaint/gen_tags.vim'
+" Plug 'jsfaint/gen_tags.vim'
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 Plug 'christoomey/vim-tmux-navigator'
@@ -43,23 +43,9 @@ Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rails'
 
-" HTML
-Plug 'valloric/matchtagalways'
-
-" Latex
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-Plug 'vim-latex/vim-latex', { 'for': 'tex' }
-
 call plug#end()
 
 let g:easytags_suppress_ctags_warning = 1
-let g:livepreview_previewer = 'open -a Preview'
-
-" Async Linter Engine Config (ale)
-let g:ale_completion_enabled=1
-let g:ale_linters = { 'python': ['autopep8'], 'ruby': ['ruby', 'rubocop']}
-let g:ale_linters_explicit=1
-let g:ale_sign_column_always=1
 
 " Startify working with Nerdtree
 autocmd VimEnter *
@@ -76,6 +62,7 @@ autocmd VimEnter *
 autocmd StdinReadPre * let s:st_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 nmap ,n :NERDTreeFind<CR>
+" let NERDTreeIgnore=['__init__.py', '__pycache__']
 
 " ctrlp Config
 let g:ctrlp_map = '<c-p>'
@@ -109,6 +96,13 @@ endfunction
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+au BufNewFile,BufRead *.*
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab |
+    \ set autoindent
+
 "getting PEP8 indentation for python3
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -120,26 +114,19 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
     \ set encoding=utf-8
 
-au BufNewFile,BufRead *.rb, *.erb
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
-    \ set expandtab |
-    \ set autoindent
-
-au BufNewFile,BufRead *.cpp, *.h
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set expandtab |
-    \ set autoindent
-
 " Turn on folding
 set foldmethod=indent
 
 "Turning on Line Numbering
 set nu
 set relativenumber
+
+"pretty this shit
+" let g:python_highlight_all=1
+" let g:enable_bold_font=1
+set termguicolors
+syntax on
+colorscheme gruvbox
 
 " Gruvbox Config
 let g:gruvbox_contrast_dark='hard'
@@ -148,13 +135,6 @@ set background=dark
 " Airline Config
 let g:airline_theme='gruvbox'
 let g:airline#extensions#ale#enabled=1
-
-"pretty this shit
-" let g:python_highlight_all=1
-" let g:enable_bold_font=1
-set termguicolors
-syntax on
-colorscheme gruvbox
 
 " set scrolloff=10
 set laststatus=2 " Always display the statusline in all windows

@@ -32,12 +32,15 @@ brew install wget
 brew install tmux
 
 # short stop to install rust
-curl https://sh.rustup.rs -sSf | sh
+# curl https://sh.rustup.rs -sSf | sh
 # confirm the correct rust compiler installed
-rustup override set stable
-rustup update stable
+# rustup override set stable
+# rustup update stable
 # make the app
-cargo install --git https://github.com/jwilm/alacritty
+# note, you can either do it this way, building it yourself
+# cargo install --git https://github.com/jwilm/alacritty
+# or you can use
+brew cask install alacritty
 
 # oh my zsh
 # if we don't install this then we will run into problems when switching
@@ -46,21 +49,14 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 # macOS applications
 brew cask install atom
 brew cask install dropbox
-brew cask install google-chrome
+brew cask install opera
 brew cask install vlc
-brew cask install bettertouchtool # you'll need to provide the key for this
 brew cask install slack
 brew cask install apptivate
 
-# iterm2 preferences
 # we use Gruvbox styes for vim @ morhetz/gruvbox
-# for iterm itself there is also a gruvbox theme @ morhetz/gruvbox-contrib
 # lastly, the text is firacode @ tonsky/FiraCode
-ln -sfv "$DOTFILES/themes/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/com.googlecode.iterm2.plist"
 cp -r "$DOTFILES/themes/FiraCode" "$HOME/Library/Fonts"
-
-# BetterTouchTool preferences
-ln -sfv "$DOTFILES/themes/com.hegenberg.BetterTouchTool.plist" "$HOME/Library/Preferences/com.hegenberg.BetterTouchTool.plist"
 
 # install tpm for tmux and install associated packages
 tmux source ~/.tmux.conf
