@@ -20,29 +20,11 @@ Plug 'airblade/vim-gitgutter'
 
 " Tools
 Plug 'kien/ctrlp.vim'
-Plug 'eugen0329/vim-esearch'
 Plug 'tpope/vim-surround'
 Plug 'itmammoth/doorboy.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'tpope/vim-dispatch'
-Plug 'radenling/vim-dispatch-neovim'
-" Plug 'jsfaint/gen_tags.vim'
-Plug 'xolox/vim-easytags'
-Plug 'xolox/vim-misc'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'sjl/vitality.vim'
-Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
-
-" Ruby
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-endwise'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-rails'
-
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 let g:easytags_suppress_ctags_warning = 1
