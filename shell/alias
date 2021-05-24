@@ -5,20 +5,20 @@ alias clearswap="rm -rf ~/.local/share/nvim/swap"
 alias fixcopy="pbcopy < /dev/null"
 
 # list declared aliases, functions, paths just in case
-alias aliases="alias | sed 's/=.*//'"
-alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
-alias paths='echo -e ${PATH//:/\\n}'
+# alias aliases="alias | sed 's/=.*//'"
+# alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
+# alias paths='echo -e ${PATH//:/\\n}'
 
 # remap programs
 alias vim='nvim'
 
 # shortcuts
-alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
-alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
+# alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
+# alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
 
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
 # Get macOS Software Updates, and update Homebrew
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup;'
+# alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup;'

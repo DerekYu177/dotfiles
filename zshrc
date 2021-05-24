@@ -70,11 +70,8 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
 
-  # alacritty
-  alacritty
-
-  #ruby
-  gem
+  # ruby
+  # gem
 
   # macOS
   brew
@@ -102,9 +99,9 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # load custom stuff
-for file in $DOTFILES/shell/*(.); do
-	source $file
-done
+# for file in $DOTFILES/shell/*(.); do
+# 	source $file
+# done
 
 # shopify support
 # [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh

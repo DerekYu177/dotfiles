@@ -20,27 +20,16 @@ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 # we will install zsh but won't switch to it here
 # we can switch with `chsh -s $(which zsh)`
-brew install zsh
-if ! grep -q /usr/local/bin/zsh /private/etc/shells; then
-	echo /usr/local/bin/zsh | sudo tee -a /private/etc/shells
-else
-	echo 'zsh already found in /private/etc/shells'
-fi
+# brew install zsh
+# if ! grep -q /usr/local/bin/zsh /private/etc/shells; then
+# 	echo /usr/local/bin/zsh | sudo tee -a /private/etc/shells
+# else
+# 	echo 'zsh already found in /private/etc/shells'
+# fi
 
 # others
 brew install wget
 brew install tmux
-
-# short stop to install rust
-# curl https://sh.rustup.rs -sSf | sh
-# confirm the correct rust compiler installed
-# rustup override set stable
-# rustup update stable
-# make the app
-# note, you can either do it this way, building it yourself
-# cargo install --git https://github.com/jwilm/alacritty
-# or you can use
-brew cask install alacritty
 
 # oh my zsh
 # if we don't install this then we will run into problems when switching

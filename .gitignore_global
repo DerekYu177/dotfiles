@@ -6,3 +6,6 @@ tags/
 *.pyc
 __pycache__/
 
+# rails
+node_modules/
+tmp/

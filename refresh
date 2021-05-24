@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+export DOTFILES="$HOME/dotfiles"
+
+# load custom stuff
+for file in $DOTFILES/shell/*(.); do
+  echo "Loading ${file}"
+	source $file
+done
