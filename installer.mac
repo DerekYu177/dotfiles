@@ -10,11 +10,8 @@ _get_brew()
 brew update
 brew cleanup
 
-brew install wget
-brew install tmux
-
 # oh my zsh
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 brew cask install dropbox
 brew cask install slack
@@ -25,4 +22,5 @@ brew cask install apptivate
 cp -r "$DOTFILES/themes/FiraCode" "$HOME/Library/Fonts"
 
 # install tpm for tmux and install associated packages
+brew install tmux
 tmux source ~/.tmux.conf
