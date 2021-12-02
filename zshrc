@@ -99,9 +99,29 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # load custom stuff
-# for file in $DOTFILES/shell/*(.); do
-# 	source $file
-# done
+for file in $DOTFILES/shell/*(.); do
+	source $file
+done
+
+# if our main machine
+# uncomment as necessary
+# for file in $DOTFILES/tools/mac/*(.); do source $file; done;
+
+# observe https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux
+# case "$(uname -s)" in
+# 	Darwin)
+# 		echo 'macOS';;
+# 	Linux)
+# 		echo 'Linux';;
+# 	CYGWIN*|MINGW32*|MSYS*)
+# 		echo 'MS Windows';;
+#
+# 	*)
+# 		echo 'other OS';;
+# esac
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # shopify support
 # [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
