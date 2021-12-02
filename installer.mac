@@ -10,36 +10,13 @@ _get_brew()
 brew update
 brew cleanup
 
-# https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789
-brew tap caskroom/cask
-brew tap caskroom/versions
-
-# when we install ctags we have to remove the earlier link
-brew unlink ctags
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-
-# we will install zsh but won't switch to it here
-# we can switch with `chsh -s $(which zsh)`
-# brew install zsh
-# if ! grep -q /usr/local/bin/zsh /private/etc/shells; then
-# 	echo /usr/local/bin/zsh | sudo tee -a /private/etc/shells
-# else
-# 	echo 'zsh already found in /private/etc/shells'
-# fi
-
-# others
 brew install wget
 brew install tmux
 
 # oh my zsh
-# if we don't install this then we will run into problems when switching
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
-# macOS applications
-brew cask install atom
 brew cask install dropbox
-brew cask install opera
-brew cask install vlc
 brew cask install slack
 brew cask install apptivate
 
