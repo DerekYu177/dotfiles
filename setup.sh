@@ -27,3 +27,9 @@ cp -r "$DOTFILES/fonts/FiraCode" "$HOME/Library/Fonts"
 
 # apply gitignore global
 git config --global core.excludesfile '~/.gitignore_global'
+
+# update everything in shell
+for file in $DOTFILES/shell/*; do
+  echo "Applying $file !"
+	source $file
+done
