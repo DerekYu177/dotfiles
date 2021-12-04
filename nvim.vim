@@ -24,11 +24,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'itmammoth/doorboy.vim'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'jsfaint/gen_tags.vim'
-Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'dense-analysis/ale'
 Plug 'mhinz/vim-startify'
 
 " Ruby
@@ -47,11 +44,6 @@ function! ShowCurrentFile()
   echo location
   let @+=location
 endfunction
-
-let test#strategy = 'vimux'
-
-let g:easytags_suppress_ctags_warning = 1
-let g:easytags_async = 1
 
 " Async Linter Engine Config (ale)
 let g:ale_completion_enabled=1
@@ -83,27 +75,6 @@ if executable('rg')
   set grepprg=rg\ --color=never
 endif
 set wildignore+=*/.git/*,*/tmp/*,*.swp
-
-" FZF replacing ctrl-p
-nmap <C-P> :FZF<CR>
-let g:fzf_tags_command = 'ctags -R'
-let g:fzf_preview_window = 'right:40%'
-
-function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
-endfunction
-
-command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-
-"vim-test config
-map <Leader>t :TestFile<CR>
-map <Leader>s :TestNearest<CR>
-let test#strategy = "vimux"
-let test#filename_modifier = ':p'
 
 " Shortcut keys
 nnoremap <C-J> <C-W><C-J>
@@ -162,7 +133,6 @@ set nu
 set relativenumber
 
 "pretty this shit
-" let g:python_highlight_all=1
 " let g:enable_bold_font=1
 set termguicolors
 syntax on
@@ -171,9 +141,6 @@ colorscheme gruvbox
 " Gruvbox Config
 let g:gruvbox_contrast_dark='hard'
 set background=dark
-
-" Airline Config
-let g:airline#extensions#ale#enabled=1
 
 "pretty this shit
 let g:python_highlight_all=1

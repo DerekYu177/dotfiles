@@ -65,17 +65,9 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   tmux
-
   colored-man-pages
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-
-  # ruby
-  # gem
-
-  # macOS
   brew
-  osx
+  macOS
 )
 
 source $ZSH/oh-my-zsh.sh

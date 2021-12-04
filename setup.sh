@@ -19,8 +19,8 @@ mkdir -p $HOME/.config/nvim/
 ln -sfv "$DOTFILES/nvim.vim" "$HOME/.config/nvim/init.vim"
 
 # alacritty
-# mkdir -p $HOME/.config/alacritty
-# ln -sfv "$DOTFILES/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
+mkdir -p $HOME/.config/alacritty
+ln -sfv "$DOTFILES/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 
 # fonts
 cp -r "$DOTFILES/fonts/FiraCode" "$HOME/Library/Fonts"
