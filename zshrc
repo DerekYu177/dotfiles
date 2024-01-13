@@ -115,5 +115,12 @@ done
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# shopify support
-# [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+# Add the following to the ~/.bash_profile or ~/.zshrc file:
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+
+# To enable auto-switching of Rubies specified by .ruby-version files,
+# add the following to ~/.bash_profile or ~/.zshrc:
+source /usr/local/opt/chruby/share/chruby/auto.sh
+
+# heroku
+# eval "$(heroku autocomplete:script zsh)"

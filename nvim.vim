@@ -76,6 +76,23 @@ if executable('rg')
 endif
 set wildignore+=*/.git/*,*/tmp/*,*.swp
 
+" FZF replacing ctrl-p
+nmap <C-P> :FZF<CR>
+let g:fzf_tags_command = 'ctags -R'
+let g:fzf_preview_window = 'right:40%'
+
+" nnoremap <C-p> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
 " Shortcut keys
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

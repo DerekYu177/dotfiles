@@ -1,0 +1,13 @@
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
+
+# postgresql@13
+export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
+
+# for compilers
+export LDFLAGS="-L/usr/local/opt/postgresql@13/lib"
+export CPPFLAGS="-I/usr/local/opt/postgresql@13/include"
+
+# for pkg-config
+export PKG_CONFIG_PATH="/usr/local/opt/postgresql@13/lib/pkgconfig"
