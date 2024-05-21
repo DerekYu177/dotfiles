@@ -1,29 +1,17 @@
 #!/usr/bin/env bash
 
 # Make utilities available
-export DOTFILES="$HOME/dotfiles"
+export DOTFILES="$HOME/Github/DerekYu177/dotfiles"
 PATH="$DOTFILES/bin:$PATH"
 
-# git
 ln -sfv "$DOTFILES/.gitconfig" ~
 ln -sfv "$DOTFILES/.gitignore_global" ~
-
-# tmux
-ln -sfv "$DOTFILES/tmux.conf" "$HOME/.tmux.conf"
-
-# zshrc
-ln -sfv "$DOTFILES/zshrc" "$HOME/.zshrc"
-
-# nvim
+ln -sfv "$DOTFILES/.tmux.conf" "$HOME/.tmux.conf"
+ln -sfv "$DOTFILES/.zshrc" "$HOME/.zshrc"
 mkdir -p $HOME/.config/nvim/
-ln -sfv "$DOTFILES/nvim.vim" "$HOME/.config/nvim/init.vim"
-
-# alacritty
-mkdir -p $HOME/.config/alacritty
-ln -sfv "$DOTFILES/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
-
-# fonts
-cp -r "$DOTFILES/fonts/FiraCode" "$HOME/Library/Fonts"
+ln -sfv "$DOTFILES/config/nvim/init.lua" "$HOME/.config/nvim/init.lua"
+mkdir -p $HOME/.config/kitty
+ln -sfv "$DOTFILES/config/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 
 # apply gitignore global
 git config --global core.excludesfile '~/.gitignore_global'

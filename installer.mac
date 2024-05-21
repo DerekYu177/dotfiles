@@ -1,26 +1,41 @@
-#!/bin/bash
+#!/bin/zsh
 
-_get_brew() {
-    if hash brew 2>/dev/null; then
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    fi
-}
+# The following is a list of manual commands the last time I refreshed my computer
+# 2024-01-13
+# There are manual steps in between, such as setting up github etc.
 
-_get_brew()
-brew update
-brew cleanup
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+(echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> /Users/derekyu/.zprofile
+eval "$(/usr/local/bin/brew shellenv)"
+brew install neovim
+brew install apptivate
 
-# oh my zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Manually install PIA
+brew install bitwarden
+brew install authy
+brew install rectangle
 
-brew cask install dropbox
-brew cask install slack
-brew cask install apptivate
+# For terminal stuff now
+brew install git
+brew install gh
+# Setup Github
 
-# we use Gruvbox styes for vim @ morhetz/gruvbox
-# lastly, the text is firacode @ tonsky/FiraCode
-cp -r "$DOTFILES/themes/FiraCode" "$HOME/Library/Fonts"
+brew install rbenv
+rbenv install 3.3.0
+brew install tmux
+
+# Make sure to update your font to a patched one
+curl -L "https://sw.kovidgoyal.net/kitty/installer.sh" | sh /dev/stdin
+# Also had to clone another repo https://github.com/rsaihe/gruvbox-material-kitty/tree/main
+# the existing zprofile isn’t recognized for some reason
+mv ~/.zprofile ~/.zshrc
+
+# Install Oh My ZSH
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# this will automatically create a backup called ~/.zshrc-pre-oh-my-zsh
+cat ~/.zshrc-pre-oh-my-zsh >> ~/.zshrc
+
+brew install ripgrep
 
 # install tpm for tmux and install associated packages
-brew install tmux
 tmux source ~/.tmux.conf
